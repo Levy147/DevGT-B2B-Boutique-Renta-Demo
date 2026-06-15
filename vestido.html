@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Vestido - Nicol Dress Rental</title>
+  <link rel="stylesheet" href="public/css/main.css">
+  <link rel="stylesheet" href="public/css/cliente.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo"><span>👗 Nicol Dress Rental</span></a>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="/">Inicio</a>
+        <a href="catalogo.html" class="active">Catálogo</a>
+        <a href="/#como-funciona">Cómo Funciona</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="btn-icon" onclick="window.location.href='catalogo.html?tab=favoritos'">♡</button>
+        <button class="btn-icon" id="userBtn" onclick="toggleUserMenu()">👤</button>
+        <button class="btn btn-primary btn-sm" id="loginBtn" onclick="openLoginModal()">Iniciar Sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="product-detail" id="productDetail">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">👗 Nicol Dress Rental</div>
+        <p>Alquiler de vestidos para Fiesta, Novia, Damas y 15 Años.</p>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <a href="catalogo.html">Catálogo</a><br>
+        <a href="/#como-funciona">Cómo Funciona</a>
+      </div>
+      <div><h4>Ayuda</h4><a href="faq.html">FAQ</a><br><a href="politicas.html">Política de Alquiler</a><br><a href="terminos.html">Términos</a><br><a href="privacidad.html">Privacidad</a></div>
+      <div>
+        <h4>Contacto</h4>
+        <p>📍 7av 16-21 zona 9, Guatemala</p>
+        <p>📞 2339-4963</p>
+        <p>✉️ info@nicoldressrental.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Nicol Dress Rental - Guatemala</p></div>
+  </footer>
+
+  <!-- ─── LOGIN MODAL ─── -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Iniciar Sesión</h3>
+        <button class="modal-close" onclick="closeLoginModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Correo</label>
+            <input type="email" id="loginEmail" placeholder="tu@correo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Contraseña</label>
+            <input type="password" id="loginPassword" placeholder="••••••" required>
+          </div>
+          <div class="form-group" style="margin:0;">
+            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+          </div>
+          <div class="form-footer">
+            <p>Demo: <strong>maria@demo.com</strong> / <strong>123456</strong></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="public/js/data.js"></script>
+  <script src="public/js/catalogo.js"></script>
+  <script src="public/js/carrito.js"></script>
+  <script src="public/js/image-config.js"></script>
+  <script>
+    document.getElementById('menuToggle')?.addEventListener('click', () => {
+      document.getElementById('navbarLinks').classList.toggle('open');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id'));
+      if (id) {
+        renderizarVestido(id);
+      }
+    });
+  </script>
+</body>
+</html>

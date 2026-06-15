@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicol Dress Rental · Alquiler de Vestidos Fiesta, Novia, Damas y 15 Años</title>
+  <meta name="description" content="Nicol Dress Rental - Alquiler de vestidos para Fiesta, Novia, Damas y 15 Años. ☎️ 2339-4963 · 7av 16-21 zona 9 Guatemala.">
+  <link rel="stylesheet" href="public/css/main.css">
+  <link rel="stylesheet" href="public/css/cliente.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <span>👗 Nicol Dress Rental</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="/" class="active">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="#como-funciona">Cómo Funciona</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="btn-icon" id="favBtn" onclick="window.location.href='catalogo.html?tab=favoritos'" title="Mis Favoritos">
+          ♡
+        </button>
+        <button class="btn-icon" id="userBtn" onclick="toggleUserMenu()" title="Mi Cuenta">
+          👤
+        </button>
+        <button class="btn btn-primary btn-sm" id="loginBtn" onclick="openLoginModal()">Iniciar Sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO SECTION ─── -->
+  <main class="main-content">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>
+            El vestido perfecto
+            <span>para tu momento especial</span>
+          </h1>
+          <p>
+            Alquiler de vestidos para Fiesta, Novia, Damas y 15 Años. 
+            Calidad premium, precios accesibles. ¡Agenda tu prueba hoy!
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;font-size:0.9rem;color:var(--text-secondary);">
+            <span>📍 7av 16-21 zona 9, Guatemala</span>
+            <span>📞 <a href="tel:23394963" style="color:var(--primary);">2339-4963</a></span>
+          </div>
+          <div class="hero-buttons">
+            <a href="catalogo.html" class="btn btn-primary btn-lg">✨ Explorar Catálogo</a>
+            <a href="#como-funciona" class="btn btn-secondary btn-lg">¿Cómo funciona?</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://picsum.photos/seed/hero/600/800" alt="Vestido de alta costura" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── NOVEDADES / SLIDER ─── -->
+    <section class="section featured-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>✨ Más Rentados</h2>
+          <p>Los vestidos favoritos de nuestras clientas esta temporada</p>
+        </div>
+        <div class="slider-wrapper">
+          <div class="slider-track" id="featuredSlider"></div>
+        </div>
+        <div class="slider-arrows">
+          <button class="slider-arrow" onclick="slideSlider(-1)">‹</button>
+          <button class="slider-arrow" onclick="slideSlider(1)">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CÓMO FUNCIONA ─── -->
+    <section class="section how-it-works" id="como-funciona">
+      <div class="container">
+        <div class="section-title">
+          <h2>¿Cómo Funciona?</h2>
+          <p>Rentar tu vestido ideal es más fácil de lo que imaginas</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Explora el Catálogo</h3>
+            <p>Navega por nuestra colección de vestidos. Filtra por categoría, color, talla y precio para encontrar tu estilo.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Agenda una Cita</h3>
+            <p>Selecciona el vestido que te encantó y agenda una cita para probártelo en nuestra boutique. ¡Sin costo!</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Usa el Vestido</h3>
+            <p>Recoge tu vestido listo para usar. Incluye ajustes básicos gratuitos y accesorios complementarios.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Devuélvelo</h3>
+            <p>Después de tu evento, devuelve el vestido en cualquiera de nuestras sucursales. ¡Así de sencillo!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CATEGORÍAS ─── -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nuestras Categorías</h2>
+          <p>Tenemos el vestido perfecto para cada celebración</p>
+        </div>
+        <div class="grid grid-4">
+          <a href="catalogo.html?categoria=Boda" class="card" style="text-align:center;padding:48px 24px;">
+            <div style="font-size:3rem;margin-bottom:12px;">👰</div>
+            <h3>Boda</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;">Vestidos de novia</p>
+          </a>
+          <a href="catalogo.html?categoria=15 Años" class="card" style="text-align:center;padding:48px 24px;">
+            <div style="font-size:3rem;margin-bottom:12px;">👑</div>
+            <h3>15 Años</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;">Vestidos de quinceañera</p>
+          </a>
+          <a href="catalogo.html?categoria=Graduación" class="card" style="text-align:center;padding:48px 24px;">
+            <div style="font-size:3rem;margin-bottom:12px;">🎓</div>
+            <h3>Graduación</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;">Vestidos de graduación</p>
+          </a>
+          <a href="catalogo.html?categoria=Cóctel" class="card" style="text-align:center;padding:48px 24px;">
+            <div style="font-size:3rem;margin-bottom:12px;">🍸</div>
+            <h3>Cóctel</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;">Vestidos de evento</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">👗 Nicol Dress Rental</div>
+        <p>Alquiler de vestidos para Fiesta, Novia, Damas y 15 Años. Calidad premium, precios accesibles y atención personalizada en Guatemala.</p>
+        <button class="switch-view" onclick="window.location.href='admin/dashboard.html'" style="margin-top:12px;">⚙️ Cambiar a Vista Admin</button>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <a href="catalogo.html">Catálogo</a><br>
+        <a href="#como-funciona">Cómo Funciona</a><br>
+        <a href="catalogo.html?categoria=Boda">Vestidos de Novia</a><br>
+        <a href="catalogo.html?categoria=15 Años">Vestidos de 15 Años</a>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="faq.html">Preguntas Frecuentes</a><br>
+        <a href="politicas.html">Política de Alquiler</a><br>
+        <a href="terminos.html">Términos y Condiciones</a><br>
+        <a href="privacidad.html">Aviso de Privacidad</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>📍 7av 16-21 zona 9, Guatemala</p>
+        <p>📞 <a href="tel:23394963" style="color:rgba(255,255,255,0.7);">2339-4963</a></p>
+        <p>✉️ info@nicoldressrental.com</p>
+        <p>🕐 Lun-Sáb: 10:00 - 19:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nicol Dress Rental - Guatemala. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ─── LOGIN MODAL ─── -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Iniciar Sesión</h3>
+        <button class="modal-close" onclick="closeLoginModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Correo electrónico</label>
+            <input type="email" id="loginEmail" placeholder="tu@correo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Contraseña</label>
+            <input type="password" id="loginPassword" placeholder="••••••" required>
+          </div>
+          <div class="form-group" style="margin:0;">
+            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+          </div>
+          <div class="form-footer">
+            <p>Usuarios demo: <strong>maria@demo.com</strong> / <strong>ana@demo.com</strong> / <strong>carmen@demo.com</strong><br>Contraseña: <strong>123456</strong></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TOAST CONTAINER ─── -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="public/js/data.js"></script>
+  <script src="public/js/catalogo.js"></script>
+  <script src="public/js/carrito.js"></script>
+  <script src="public/js/image-config.js"></script>
+  <script>
+    // ─── Mobile Menu ───
+    document.getElementById('menuToggle')?.addEventListener('click', () => {
+      document.getElementById('navbarLinks').classList.toggle('open');
+    });
+
+    // ─── Load Featured Slider ───
+    document.addEventListener('DOMContentLoaded', () => {
+      const vestidos = getVestidosDisponibles().slice(0, 5);
+      const slider = document.getElementById('featuredSlider');
+      slider.innerHTML = vestidos.map(v => crearCardVestido(v)).join('');
+    });
+
+    let sliderIndex = 0;
+    function slideSlider(dir) {
+      const track = document.getElementById('featuredSlider');
+      const cardWidth = 280 + 24;
+      sliderIndex = Math.max(0, Math.min(sliderIndex + dir, track.children.length - 1));
+      track.scrollTo({ left: sliderIndex * cardWidth, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

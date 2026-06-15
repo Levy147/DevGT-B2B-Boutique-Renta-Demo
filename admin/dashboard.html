@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Panel Admin | Nicol Dress Rental</title>
+  <link rel="stylesheet" href="../public/css/main.css">
+  <link rel="stylesheet" href="../public/css/admin.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-logo"><span>👗 Nicol Dress Rental</span></a>
+      <div style="font-size:0.85rem;color:var(--text-muted);">Panel de Administración</div>
+      <div class="navbar-actions">
+        <button class="btn btn-outline btn-sm" onclick="handleLogout()">🚪 Salir</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="sidebar-logo">⚙️ Admin</div>
+        <a href="dashboard.html" class="active">📊 Dashboard</a>
+        <a href="inventario.html">📦 Inventario</a>
+        <a href="scanner.html">📷 Scanner QR</a>
+        <a href="../catalogo.html">← Ver Tienda</a>
+      </aside>
+
+      <section class="admin-main">
+        <h1>📊 Dashboard</h1>
+        <p class="page-desc">Resumen operativo de Nicol Dress Rental</p>
+
+        <!-- Stats -->
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-icon purple">📅</div>
+            <div class="stat-number" id="statCitasHoy">-</div>
+            <div class="stat-label">Citas para hoy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue">👗</div>
+            <div class="stat-number" id="statDisponibles">-</div>
+            <div class="stat-label">Vestidos disponibles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">🧺</div>
+            <div class="stat-number" id="statLavanderia">-</div>
+            <div class="stat-label">En lavandería</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange">🔧</div>
+            <div class="stat-number" id="statReparacion">-</div>
+            <div class="stat-label">En reparación</div>
+          </div>
+        </div>
+
+        <!-- Citas de Hoy + WhatsApp -->
+        <div class="table-container">
+          <div class="table-header">
+            <h3>📅 Citas del Día</h3>
+            <span id="citasHoyCount" style="color:var(--text-muted);font-size:0.9rem;"></span>
+          </div>
+          <div id="citasHoyTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Vestido</th>
+                  <th>Hora</th>
+                  <th>Tipo</th>
+                  <th>Estado</th>
+                  <th>Recordatorio</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="citasHoyBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Todas las Citas Pendientes -->
+        <div class="table-container">
+          <div class="table-header">
+            <h3>📋 Todas las Citas Pendientes</h3>
+          </div>
+          <div id="citasPendientesTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Vestido</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Tipo</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="citasPendientesBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Estadísticas de Rentabilidad -->
+        <div class="chart-container">
+          <h3 style="margin-bottom:20px;">📈 Vestidos Más Rentados</h3>
+          <div id="chartBars"></div>
+        </div>
+
+        <!-- Vestidos en Lavandería -->
+        <div class="table-container">
+          <div class="table-header">
+            <h3>🧺 Vestidos en Lavandería / Tintorería</h3>
+          </div>
+          <div id="lavanderiaList"></div>
+        </div>
+
+        <!-- Daños / Depósitos -->
+        <div class="table-container">
+          <div class="table-header">
+            <h3>🔧 Control de Daños y Depósitos</h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Vestido</th>
+                <th>Cliente</th>
+                <th>Daño Reportado</th>
+                <th>Tipo</th>
+                <th>Depósito a Retener</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="danosBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../public/js/data.js"></script>
+  <script src="../public/js/carrito.js"></script>
+  <script src="../public/js/admin.js"></script>
+  <script src="../public/js/image-config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = getCurrentUser();
+      if (!user || user.correo !== 'admin@boutique.com') {
+        window.location.href = '../index.html';
+        return;
+      }
+      cargarDashboard();
+      cargarEstadisticas();
+      cargarTintoreria();
+      cargarDanos();
+    });
+  </script>
+</body>
+</html>

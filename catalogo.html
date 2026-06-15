@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Nicol Dress Rental</title>
+  <link rel="stylesheet" href="public/css/main.css">
+  <link rel="stylesheet" href="public/css/cliente.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo"><span>👗 Nicol Dress Rental</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="/">Inicio</a>
+        <a href="catalogo.html" class="active">Catálogo</a>
+        <a href="/#como-funciona">Cómo Funciona</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="btn-icon" onclick="window.location.href='?tab=favoritos'" title="Favoritos">♡</button>
+        <button class="btn-icon" id="userBtn" onclick="toggleUserMenu()" title="Mi Cuenta">👤</button>
+        <button class="btn btn-primary btn-sm" id="loginBtn" onclick="openLoginModal()">Iniciar Sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="page-hero">
+      <h1>✨ Catálogo de Vestidos</h1>
+      <p>Encuentra el vestido perfecto para tu evento especial</p>
+    </div>
+
+    <div class="container">
+      <div class="catalog-layout">
+        <!-- ─── SIDEBAR FILTROS ─── -->
+        <aside class="filters-sidebar" id="filtersSidebar">
+          <div class="filters-header">
+            <h3>Filtros</h3>
+            <span class="clear-filters" onclick="limpiarFiltros()">Limpiar todo ✕</span>
+          </div>
+
+          <!-- Categoría -->
+          <div class="filter-group">
+            <label>Categoría</label>
+            <div class="filter-categories" id="filterCategorias">
+              <button class="filter-category-btn" data-categoria="" onclick="filtrarPorCategoria(this)">Todas</button>
+              <button class="filter-category-btn" data-categoria="Boda" onclick="filtrarPorCategoria(this)">👰 Boda</button>
+              <button class="filter-category-btn" data-categoria="15 Años" onclick="filtrarPorCategoria(this)">👑 15 Años</button>
+              <button class="filter-category-btn" data-categoria="Graduación" onclick="filtrarPorCategoria(this)">🎓 Graduación</button>
+              <button class="filter-category-btn" data-categoria="Cóctel" onclick="filtrarPorCategoria(this)">🍸 Cóctel</button>
+            </div>
+          </div>
+
+          <!-- Color -->
+          <div class="filter-group">
+            <label>Color</label>
+            <div class="color-swatches" id="filterColores">
+              <button class="color-swatch" data-color="Blanco" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Marfil" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Rosado" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Azul" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Rojo" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Dorado" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Plateado" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Lavanda" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Verde" onclick="filtrarPorColor(this)"></button>
+              <button class="color-swatch" data-color="Negro" onclick="filtrarPorColor(this)"></button>
+            </div>
+          </div>
+
+          <!-- Talla -->
+          <div class="filter-group">
+            <label>Talla</label>
+            <div class="size-chips" id="filterTallas">
+              <button class="size-chip" data-talla="XS" onclick="filtrarPorTalla(this)">XS</button>
+              <button class="size-chip" data-talla="S" onclick="filtrarPorTalla(this)">S</button>
+              <button class="size-chip" data-talla="M" onclick="filtrarPorTalla(this)">M</button>
+              <button class="size-chip" data-talla="L" onclick="filtrarPorTalla(this)">L</button>
+              <button class="size-chip" data-talla="XL" onclick="filtrarPorTalla(this)">XL</button>
+            </div>
+          </div>
+
+          <!-- Precio -->
+          <div class="filter-group">
+            <label>Rango de Precio (Renta)</label>
+            <div class="price-range-inputs">
+              <input type="number" id="precioMin" placeholder="Min" min="0" onchange="filtrarPorPrecio()">
+              <span>—</span>
+              <input type="number" id="precioMax" placeholder="Max" min="0" onchange="filtrarPorPrecio()">
+            </div>
+          </div>
+
+          <!-- Tipo de Cuerpo -->
+          <div class="filter-group">
+            <label>Tipo de Cuerpo</label>
+            <div class="filter-body-types" id="filterCuerpo">
+              <button class="filter-body-btn" data-cuerpo="" onclick="filtrarPorCuerpo(this)">Todos</button>
+              <button class="filter-body-btn" data-cuerpo="Reloj de Arena" onclick="filtrarPorCuerpo(this)">⏳ Reloj de Arena</button>
+              <button class="filter-body-btn" data-cuerpo="Pera" onclick="filtrarPorCuerpo(this)">🍐 Pera</button>
+              <button class="filter-body-btn" data-cuerpo="Triángulo Invertido" onclick="filtrarPorCuerpo(this)">🔻 Triángulo Invertido</button>
+              <button class="filter-body-btn" data-cuerpo="Rectángulo" onclick="filtrarPorCuerpo(this)">▬ Rectángulo</button>
+            </div>
+          </div>
+
+          <!-- Tipo transacción -->
+          <div class="filter-group">
+            <label>Tipo</label>
+            <div class="filter-checkboxes">
+              <label class="filter-checkbox">
+                <input type="checkbox" id="soloRenta" onchange="aplicarFiltros()">
+                Solo Alquiler
+              </label>
+              <label class="filter-checkbox">
+                <input type="checkbox" id="soloVenta" onchange="aplicarFiltros()">
+                Solo Venta
+              </label>
+            </div>
+          </div>
+
+          <!-- Búsqueda -->
+          <div class="filter-group">
+            <label>Buscar</label>
+            <input type="text" id="searchInput" placeholder="Nombre del vestido..." oninput="aplicarFiltros()">
+          </div>
+        </aside>
+
+        <!-- ─── GRID CATÁLOGO ─── -->
+        <div>
+          <div class="catalog-header">
+            <span class="result-count" id="resultCount">Mostrando 0 vestidos</span>
+            <select class="sort-select" id="sortSelect" onchange="aplicarFiltros()">
+              <option value="default">Ordenar por</option>
+              <option value="precio-asc">Menor precio</option>
+              <option value="precio-desc">Mayor precio</option>
+              <option value="nombre">Nombre A-Z</option>
+            </select>
+          </div>
+          <div class="grid grid-3" id="catalogGrid"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">👗 Nicol Dress Rental</div>
+        <p>Alquiler de vestidos para Fiesta, Novia, Damas y 15 Años.</p>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <a href="catalogo.html">Catálogo</a><br>
+        <a href="/#como-funciona">Cómo Funciona</a><br>
+        <a href="catalogo.html?categoria=Boda">Novia</a><br>
+        <a href="catalogo.html?categoria=15 Años">15 Años</a>
+      </div>
+      <div><h4>Ayuda</h4><a href="faq.html">FAQ</a><br><a href="politicas.html">Política de Alquiler</a><br><a href="terminos.html">Términos</a><br><a href="privacidad.html">Privacidad</a></div>
+      <div>
+        <h4>Contacto</h4>
+        <p>📍 7av 16-21 zona 9, Guatemala</p>
+        <p>📞 2339-4963</p>
+        <p>✉️ info@nicoldressrental.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Nicol Dress Rental - Guatemala</p></div>
+  </footer>
+
+  <!-- ─── LOGIN MODAL ─── -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Iniciar Sesión</h3>
+        <button class="modal-close" onclick="closeLoginModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Correo electrónico</label>
+            <input type="email" id="loginEmail" placeholder="tu@correo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Contraseña</label>
+            <input type="password" id="loginPassword" placeholder="••••••" required>
+          </div>
+          <div class="form-group" style="margin:0;">
+            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+          </div>
+          <div class="form-footer">
+            <p>Demo: <strong>maria@demo.com</strong> / <strong>123456</strong></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="public/js/data.js"></script>
+  <script src="public/js/catalogo.js"></script>
+  <script src="public/js/carrito.js"></script>
+  <script src="public/js/image-config.js"></script>
+  <script>
+    document.getElementById('menuToggle')?.addEventListener('click', () => {
+      document.getElementById('navbarLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
