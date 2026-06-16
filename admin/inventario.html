@@ -177,12 +177,17 @@
   <script src="../public/js/image-config.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      /* COMENTAMOS LA SEGURIDAD PARA PODER ENTRAR
       const user = getCurrentUser();
       if (!user || user.correo !== 'admin@boutique.com') {
         window.location.href = '../index.html';
         return;
       }
-      renderizarInventario();
+      */
+      cargarDashboard();
+      cargarEstadisticas();
+      cargarTintoreria();
+      cargarDanos();
     });
   </script>
 </body>
