@@ -107,12 +107,7 @@ function aplicarFiltros() {
   // Excluir vestidos en lavandería o reparación (ocultos del catálogo público)
   resultados = resultados.filter(v => v.estado !== 'lavanderia' && v.estado !== 'reparacion');
 
-  // Filtro tipo de cuerpo
-  if (estadoFiltros.tipoCuerpo) {
-    resultados = resultados.filter(v => v.tipo_cuerpo && v.tipo_cuerpo.includes(estadoFiltros.tipoCuerpo));
-  }
-
-  // Filtro categoría
+    // Filtro categoría
   if (estadoFiltros.categoria) {
     resultados = resultados.filter(v => v.categoria === estadoFiltros.categoria);
   }
