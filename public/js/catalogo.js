@@ -11,7 +11,6 @@ const estadoFiltros = {
   categoria: '',
   color: '',
   talla: '',
-  tipoCuerpo: '',
   precioMin: 0,
   precioMax: Infinity,
   soloRenta: false,
@@ -186,7 +185,6 @@ function limpiarFiltros() {
   estadoFiltros.categoria = '';
   estadoFiltros.color = '';
   estadoFiltros.talla = '';
-  estadoFiltros.tipoCuerpo = '';
   estadoFiltros.precioMin = 0;
   estadoFiltros.precioMax = Infinity;
   estadoFiltros.soloRenta = false;
@@ -213,14 +211,6 @@ function limpiarFiltros() {
   if (soloVenta) soloVenta.checked = false;
   if (sortSelect) sortSelect.value = 'default';
 
-  aplicarFiltros();
-}
-
-// ─── FILTRO POR TIPO DE CUERPO ───
-function filtrarPorCuerpo(btn) {
-  document.querySelectorAll('#filterCuerpo .filter-body-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  estadoFiltros.tipoCuerpo = btn.dataset.cuerpo;
   aplicarFiltros();
 }
 
