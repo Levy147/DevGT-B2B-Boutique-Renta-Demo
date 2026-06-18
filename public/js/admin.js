@@ -163,13 +163,13 @@ function cargarTintoreria() {
   const enLavanderia = getVestidos().filter(v => v.estado === 'lavanderia' || v.estado === 'reparacion');
 
   if (enLavanderia.length === 0) {
-    list.innerHTML = `<div style="padding:24px;text-align:center;color:var(--text-muted);">🧺 No hay vestidos en tintorería</div>`;
+    list.innerHTML = `<div style="padding:24px;text-align:center;color:var(--text-muted);">No hay vestidos en tintorería</div>`;
     return;
   }
 
   list.innerHTML = enLavanderia.map(v => {
     const retorno = v.fecha_retorno_lavanderia || 'Sin fecha estimada';
-    const label = v.estado === 'lavanderia' ? '🧺 Lavandería' : '🔧 Reparación';
+    const label = v.estado === 'lavanderia' ? 'Lavandería' : 'Reparación';
     return `
       <div class="laundry-card">
         <div class="laundry-info">
@@ -184,7 +184,7 @@ function cargarTintoreria() {
 
 function cambiarEstadoCita(idCita, nuevoEstado) {
   actualizarEstadoCita(idCita, nuevoEstado);
-  showToast(`✅ Cita ${nuevoEstado} correctamente`, 'success');
+  showToast(`Cita ${nuevoEstado} correctamente`, 'success');
   cargarDashboard();
   cargarEstadisticas();
 }
@@ -236,9 +236,9 @@ function renderizarInventario() {
       <td>${v.disponibles}</td>
       <td>
         <div class="table-actions">
-          <button class="btn btn-sm btn-secondary" onclick="editarVestido(${v.id})">✏️</button>
-          <button class="btn btn-sm btn-outline" onclick="generarQR(${v.id})">📱 QR</button>
-          <button class="btn btn-sm btn-danger" onclick="eliminarVestido(${v.id})">🗑️</button>
+          <button class="btn btn-sm btn-secondary" onclick="editarVestido(${v.id})"></button>
+          <button class="btn btn-sm btn-outline" onclick="generarQR(${v.id})"> QR</button>
+          <button class="btn btn-sm btn-danger" onclick="eliminarVestido(${v.id})"></button>
         </div>
       </td>
     </tr>
@@ -321,7 +321,7 @@ function editarVestido(id) {
   const v = getVestidoById(id);
   if (!v) return;
 
-  document.getElementById('formTitle').textContent = '✏️ Editar Vestido';
+  document.getElementById('formTitle').textContent = 'Editar Vestido';
   document.getElementById('editId').value = id;
   document.getElementById('vNombre').value = v.nombre;
   document.getElementById('vCategoria').value = v.categoria;

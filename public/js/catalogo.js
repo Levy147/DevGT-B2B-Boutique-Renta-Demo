@@ -48,7 +48,7 @@ function crearCardVestido(v) {
         <div class="category">${v.categoria} · ${v.color}</div>
         <div class="price-row">
           <div>
-            <div class="price">$${v.precio_renta.toLocaleString()}</div>
+            <div class="price">QQ{v.precio_renta.toLocaleString()}</div>
             <span class="price-label">Renta por evento</span>
           </div>
           ${v.precio_venta ? `<div style="text-align:right;">
@@ -239,7 +239,7 @@ function toggleFavoritoCatalog(idVestido) {
   }
   toggleFavorito(user.id, idVestido);
   const isFav = esFavorito(user.id, idVestido);
-  showToast(isFav ? '❤️ ¡Vestido guardado en tu Wishlist!' : '💔 Eliminado de favoritos', isFav ? 'success' : 'info');
+  showToast(isFav ? '¡Vestido guardado en tu Wishlist!' : ' Eliminado de favoritos', isFav ? 'success' : 'info');
   aplicarFiltros(); // Re-render para actualizar el corazón
 }
 
