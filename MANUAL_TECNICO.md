@@ -135,7 +135,7 @@ El sistema sigue una arquitectura **SPA-like** (Single Page Application-like) si
 - **JavaScript vanilla** con localStorage como base de datos
 - **SessionStorage** para manejo de sesiones de usuario
 
-### 4.2 Flujo de Datos
+### 4.2 Flujo de Datos //1
 
 ```
 Usuario → HTML (Vista) → JavaScript (Controlador) → localStorage (Modelo)
