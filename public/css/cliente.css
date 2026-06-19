@@ -845,6 +845,64 @@
   width: 100%;
 }
 
+/* ─── DISEÑO PREMIUM PARA EL CUERPO DE TARJETA (MÁS RENTADOS) ─── */
+
+.seccion-mas-rentados .product-card-body {
+  /* Aplicamos el mismo degradado oscuro y formal de tus categorías */
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-dark) 100%);
+  padding: 20px 16px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+/* Forzar que los textos tengan alto contraste sobre el nuevo fondo oscuro */
+.seccion-mas-rentados .product-card-body h3 {
+  color: var(--text-light) !important;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+/* Estilo de la categoría en Serif e Itálica como los subtítulos de abajo */
+.seccion-mas-rentados .product-card-body .category {
+  color: var(--text-muted) !important;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+/* Adaptación del SKU para que no desentone con el fondo oscuro */
+.seccion-mas-rentados .product-card-body .product-sku {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.65rem;
+  margin-bottom: 12px;
+}
+
+/* Centrado y división sutil para la fila de precios */
+.seccion-mas-rentados .product-card-body .price-row {
+  justify-content: center;
+  gap: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+}
+
+/* Precios en color claro brillante para destacar en el fondo */
+.seccion-mas-rentados .product-card-body .price {
+  color: #ffffff !important; 
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.seccion-mas-rentados .product-card-body .price-label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
 /* ─── CROSS-SELLING MODULE ─── */
 .cross-sell-section {
   background: var(--bg-card);
