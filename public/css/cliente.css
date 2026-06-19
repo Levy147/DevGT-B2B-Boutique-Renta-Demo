@@ -1441,73 +1441,58 @@
   .appointment-status { text-align: center; }
   .cross-sell-grid { grid-template-columns: 1fr; }
 }
-
 /* ============================================================
-   👗 SIDEBAR FILTROS: COMBINACIÓN ELEGANTE CON TONO MALVA (#a07a80)
+   👗 NAVBAR BLANCO Y BOTÓN DE SESIÓN (ESTILO MALVA)
    ============================================================ */
 
-/* Fondo del panel lateral: Limpio y estructurado */
-.filters-sidebar {
-  background: #ffffff; 
-  border: 1px solid rgba(160, 122, 128, 0.25); /* Borde sutil usando el malva con transparencia */
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+/* Fondo del menú principal a blanco con un sutil difuminado */
+.navbar {
+  background: rgba(255, 255, 255, 0.98) !important; 
+  border-bottom: 1px solid #eaeaea !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
-/* Título principal de filtros */
-.filters-header h3 {
-  color: #a07a80; /* Conectamos visualmente con las tarjetas */
+/* Color oscuro para el logo y nombre de la tienda para que resalte en el blanco */
+.navbar-logo,
+.navbar-logo span {
+  color: #1c1016 !important;
+}
+
+/* Enlaces del menú (Inicio, Catálogo, Cómo funciona) en gris oscuro */
+.navbar-links a {
+  color: #555555 !important;
+}
+
+/* Hover y enlace activo del menú con toque malva */
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: #a07a80 !important;
+  background: rgba(160, 122, 128, 0.08) !important;
+}
+
+/* Íconos de favoritos (♡) y usuario (👤), y menú móvil (☰) */
+.navbar-actions .btn-icon,
+.menu-toggle {
+  color: #555555 !important;
+}
+
+.navbar-actions .btn-icon:hover,
+.menu-toggle:hover {
+  color: #a07a80 !important;
+  background: rgba(160, 122, 128, 0.08) !important;
+}
+
+/* Botón de "Iniciar Sesión" con el degradado malva premium */
+.navbar .btn-primary {
+  background: linear-gradient(135deg, #a07a80 0%, #8a6a6f 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(160, 122, 128, 0.25) !important;
+  color: #ffffff !important;
   font-weight: 600;
 }
 
-/* Botones de Categoría (Inactivos) */
-.filter-category-btn {
-  background: transparent;
-  border: 1px solid rgba(160, 122, 128, 0.2);
-  color: var(--text-secondary);
+.navbar .btn-primary:hover {
+  background: linear-gradient(135deg, #b89399 0%, #a07a80 100%) !important;
+  box-shadow: 0 6px 16px rgba(160, 122, 128, 0.4) !important;
+  transform: translateY(-2px);
 }
-
-/* Hover en botones de categoría */
-.filter-category-btn:hover {
-  background: rgba(160, 122, 128, 0.06); /* Un toque levísimo del color */
-  border-color: #a07a80;
-  color: #a07a80;
-}
-
-/* Categoría Activa (Seleccionada) */
-.filter-category-btn.active {
-  background: #a07a80;
-  color: #ffffff;
-  border-color: #a07a80;
-  box-shadow: 0 4px 12px rgba(160, 122, 128, 0.2);
-}
-
-/* Tallas (Chips inactivos y hover) */
-.size-chip:hover {
-  border-color: #a07a80;
-  color: #a07a80;
-  background: rgba(160, 122, 128, 0.05);
-}
-
-/* Talla Activa (Seleccionada) */
-.size-chip.active {
-  background: #a07a80;
-  color: #ffffff;
-  border-color: #a07a80;
-}
-
-/* Checkboxes (Solo Renta / Solo Venta) */
-.filter-checkbox input[type="checkbox"] {
-  accent-color: #a07a80; /* Pinta la palomita del checkbox del mismo tono */
-}
-
-/* Inputs de Precio (Hover y Focus) */
-.price-range-inputs input:focus {
-  border-color: #a07a80;
-  box-shadow: 0 0 0 3px rgba(160, 122, 128, 0.15);
-}
-
-/* Títulos de cada grupo de filtro (Categoría, Color, Talla...) */
-.filter-group label {
-  color: #8a6a6f; /* Una versión ligeramente más oscura y grisácea del malva para lectura */
-}
-
