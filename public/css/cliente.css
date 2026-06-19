@@ -1442,90 +1442,66 @@
   .cross-sell-grid { grid-template-columns: 1fr; }
 }
 /* ============================================================
-   👗 REDISEÑO PREMIUM: CRANBERRY, DUSTY MAUVE Y BLUSH VEIL
+   👗 BARRA DE FILTROS LATERAL: CRANBERRY, DUSTY MAUVE Y BLUSH VEIL
    ============================================================ */
 
-/* ─── 1. NAVBAR (MENÚ SUPERIOR) ─── */
-.navbar {
-  background: #8e2d3b !important; /* Cranberry Silk */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 4px 16px rgba(142, 45, 59, 0.3);
+/* 1. Contenedor general del sidebar (Fondo blanco limpio para que resalten los botones) */
+.filters-sidebar {
+  background: #ffffff !important;
+  border: 1px solid rgba(160, 122, 128, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
 }
 
-/* Textos e íconos en blanco para resaltar sobre el Cranberry */
-.navbar-logo,
-.navbar-logo span,
-.navbar-links a,
-.navbar-actions .btn-icon,
-.menu-toggle {
-  color: #ffffff !important;
-}
-
-/* Hover de los enlaces del menú */
-.navbar-links a:hover,
-.navbar-links a.active,
-.navbar-actions .btn-icon:hover,
-.menu-toggle:hover {
-  color: #e7c7cf !important; /* Blush Veil */
-  background: rgba(231, 199, 207, 0.15) !important;
-}
-
-/* Botón Iniciar Sesión en el menú */
-.navbar .btn-primary {
-  background: #a07a80 !important; /* Dusty Mauve */
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 4px 10px rgba(160, 122, 128, 0.3) !important;
-}
-
-.navbar .btn-primary:hover {
-  background: #e7c7cf !important; /* Blush Veil */
-  color: #8e2d3b !important; /* Letras Cranberry para contraste */
-  transform: translateY(-2px);
-}
-
-/* ─── 2. BARRA DE FILTROS LATERAL ─── */
-
-/* Título de los filtros */
+/* 2. Título principal "Filtros" y botón de limpiar */
 .filters-header h3 {
-  color: #8e2d3b; /* Cranberry Silk */
-  font-weight: 700;
+  color: #8e2d3b !important; /* Cranberry Silk */
+  font-weight: 700 !important;
+}
+.filters-header .clear-filters {
+  color: #a07a80 !important; /* Dusty Mauve */
+}
+.filters-header .clear-filters:hover {
+  color: #8e2d3b !important; /* Pasa a Cranberry al pasar el mouse */
 }
 
-/* Títulos pequeños (Categoría, Talla, etc) */
+/* 3. Subtítulos de cada sección (Categoría, Color, Talla, etc.) */
 .filter-group label {
-  color: #a07a80; /* Dusty Mauve */
+  color: #a07a80 !important; /* Dusty Mauve */
+  font-weight: 600 !important;
 }
 
-/* ESTADO NORMAL: Botones y Tallas (Dusty Mauve) */
+/* 4. BOTONES: ESTADO NORMAL (Dusty Mauve con letras blancas) */
 .filter-category-btn,
 .size-chip {
-  background: #a07a80 !important;
+  background: #a07a80 !important; 
   color: #ffffff !important;
   border: 1px solid #a07a80 !important;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
 }
 
-/* ESTADO SELECCIONADO / HOVER (Blush Veil) */
+/* 5. BOTONES: ESTADO HOVER Y SELECCIONADO (Blush Veil con letras Cranberry) */
 .filter-category-btn:hover,
 .filter-category-btn.active,
 .size-chip:hover,
 .size-chip.active {
-  background: #e7c7cf !important;
-  color: #8e2d3b !important; /* Texto Cranberry para legibilidad perfecta */
+  background: #e7c7cf !important; /* Blush Veil */
+  color: #8e2d3b !important; /* Cranberry Silk para que se lea perfecto */
   border-color: #e7c7cf !important;
-  box-shadow: 0 2px 8px rgba(231, 199, 207, 0.5);
-  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(231, 199, 207, 0.5) !important;
+  font-weight: 600 !important;
 }
 
-/* Checkboxes de Solo Renta / Solo Venta */
+/* 6. Checkboxes (Solo Alquiler / Solo Venta) */
 .filter-checkbox input[type="checkbox"] {
-  accent-color: #8e2d3b; /* Cranberry Silk */
+  accent-color: #8e2d3b !important; /* Palomita en Cranberry Silk */
 }
 
-/* Inputs de Precio (Hover y Focus) */
+/* 7. Inputs de Precio */
+.price-range-inputs input {
+  border: 1px solid rgba(160, 122, 128, 0.3) !important;
+}
 .price-range-inputs input:focus {
-  border-color: #a07a80;
-  box-shadow: 0 0 0 3px rgba(160, 122, 128, 0.15);
+  border-color: #a07a80 !important; /* Borde Dusty Mauve al escribir */
+  box-shadow: 0 0 0 3px rgba(160, 122, 128, 0.15) !important;
 }
