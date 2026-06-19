@@ -261,6 +261,30 @@
   box-shadow: var(--shadow-wine);
 }
 
+/* ─── MÁS RENTADOS (Estilo formal con blanco) ─── */
+.seccion-mas-rentados .product-card {
+  /* Fondo base muy sutil */
+  background: linear-gradient(145deg, var(--bg-light) 0%, var(--bg-cream) 100%);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+/* Efecto Hover: Blanco puro, sombra elegante y ligera elevación */
+.seccion-mas-rentados .product-card:hover,
+.seccion-mas-rentados .product-card:active,
+.seccion-mas-rentados .product-card:focus-within {
+  background: var(--bg-white);
+  border-color: var(--bg-white);
+  box-shadow: var(--shadow-sm); 
+  transform: translateY(-4px); 
+}
+
+/* Evitar que el botón de corazón tenga colores fuera de la paleta al hacer hover */
+.seccion-mas-rentados .product-card .favorite-btn:hover {
+  color: var(--text-primary); 
+  transform: scale(1.1);
+}
+
 /* ─── CATALOG PAGE ─── */
 .catalog-layout {
   display: grid;

@@ -62,20 +62,34 @@
       </div>
     </section>
 
-    <section class="section featured-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Más Rentados</h2>
-          <p>Los vestidos favoritos de nuestras clientas esta temporada</p>
-        </div>
-        <div class="slider-wrapper">
-          <div class="slider-track" id="featuredSlider"></div>
-        </div>
-        <div class="slider-arrows">
-          <button class="slider-arrow" onclick="slideSlider(-1)" aria-label="Anterior">‹</button>
-          <button class="slider-arrow" onclick="slideSlider(1)" aria-label="Siguiente">›</button>
-        </div>
+    <!-- ─── SECCIÓN MÁS RENTADOS ─── -->
+<!-- Agregamos la clase 'seccion-mas-rentados' junto a tus clases de layout -->
+    <section class="featured-section seccion-mas-rentados" style="padding: 60px 0;">
+      <div class="container" style="max-width: var(--max-width); margin: 0 auto; padding: 0 24px;">
+    
+      <!-- Encabezado de la sección -->
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--text-primary);">Vestidos Más Rentados</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Las piezas favoritas de nuestras clientas</p>
       </div>
+
+      <!-- Contenedor del Slider -->
+      <div class="slider-wrapper">
+      
+      <!-- Pista donde se renderizan las tarjetas -->
+      <div class="slider-track" id="masRentadosGrid">
+        <!-- Las tarjetas (product-card) se generarán aquí dinámicamente con JavaScript -->
+      </div>
+      
+      <!-- Flechas del Slider -->
+      <div class="slider-arrows">
+        <button class="slider-arrow" id="btnPrev" aria-label="Anterior">←</button>
+        <button class="slider-arrow" id="btnNext" aria-label="Siguiente">→</button>
+      </div>
+
+    </div>
+    
+  </div>
     </section>
 
     <section class="section how-it-works" id="como-funciona">
