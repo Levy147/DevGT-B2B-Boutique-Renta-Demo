@@ -1448,7 +1448,7 @@
 
 /* Fondo del panel lateral: Limpio y estructurado */
 .filters-sidebar {
-  background:rgb(197, 145, 179); 
+  background:rgb(217, 201, 213); 
   border: 1px solid rgba(160, 122, 128, 0.25); /* Borde sutil usando el malva con transparencia */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
@@ -1476,7 +1476,7 @@
 /* Categoría Activa (Seleccionada) */
 .filter-category-btn.active {
   background: #a07a80;
-  color:rgb(182, 139, 201);
+  color:rgb(203, 157, 197);
   border-color: #a07a80;
   box-shadow: 0 4px 12px rgba(160, 122, 128, 0.2);
 }
