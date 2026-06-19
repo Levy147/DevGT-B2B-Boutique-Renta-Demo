@@ -1448,7 +1448,7 @@
 
 /* Fondo del panel lateral: Limpio y estructurado */
 .filters-sidebar {
-  background: #ffffff; 
+  background:rgb(197, 145, 179); 
   border: 1px solid rgba(160, 122, 128, 0.25); /* Borde sutil usando el malva con transparencia */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
