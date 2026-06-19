@@ -289,15 +289,46 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-      const vestidos = getVestidosDisponibles().slice(0, 5);
-      const slider = document.getElementById('featuredSlider');
-      slider.innerHTML = vestidos.map(v => crearCardVestido(v)).join('');
+      // ─── LIMPIEZA DE DESARROLLO ───
+      // Rompe la caché del localStorage para forzar la carga de los 50 vestidos nuevos
+      localStorage.removeItem('nicol_inicializado'); 
+      if (typeof inicializarBaseDeDatos === 'function') {
+        inicializarBaseDeDatos();
+      }
+
+      try {
+        const slider = document.getElementById('featuredSlider');
+        if (!slider) return;
+
+        // Validar que la función de lectura exista
+        const vestidos = typeof getVestidosDisponibles === 'function' ? getVestidosDisponibles().slice(0, 5) : [];
+        
+        if (vestidos.length === 0) {
+          console.warn("Nicol Dress Rental: No se encontraron vestidos disponibles en el localStorage.");
+          slider.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 20px;">No hay vestidos disponibles en este momento.</p>`;
+          return;
+        }
+
+        // Validar que la función de renderizado de tarjeta exista
+        if (typeof crearCardVestido === 'function') {
+          slider.innerHTML = vestidos.map(v => crearCardVestido(v)).join('');
+        } else {
+          console.error("Nicol Dress Rental: La función crearCardVestido() no está accesible. Revisa el orden de carga de catalogo.js.");
+          slider.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--danger); padding: 20px;">Error al cargar los componentes del catálogo.</p>`;
+        }
+
+      } catch (error) {
+        console.error("Nicol Dress Rental: Error crítico en el renderizado del slider:", error);
+      }
     });
 
+    // ─── CONTROL DEL SLIDER ───
     let sliderIndex = 0;
     function slideSlider(dir) {
       const track = document.getElementById('featuredSlider');
-      const cardWidth = 280 + 24;
+      if (!track || !track.children.length) return;
+      
+      const cardWidth = 280 + 24; // Ancho base de tarjeta + gap de separación
       sliderIndex = Math.max(0, Math.min(sliderIndex + dir, track.children.length - 1));
       track.scrollTo({ left: sliderIndex * cardWidth, behavior: 'smooth' });
     }
