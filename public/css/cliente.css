@@ -1441,3 +1441,72 @@
   .appointment-status { text-align: center; }
   .cross-sell-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   👗 SIDEBAR FILTROS: COMBINACIÓN ELEGANTE CON TONO MALVA (#a07a80)
+   ============================================================ */
+
+/* Fondo del panel lateral: Limpio y estructurado */
+.filters-sidebar {
+  background: #ffffff; 
+  border: 1px solid rgba(160, 122, 128, 0.25); /* Borde sutil usando el malva con transparencia */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Título principal de filtros */
+.filters-header h3 {
+  color: #a07a80; /* Conectamos visualmente con las tarjetas */
+  font-weight: 600;
+}
+
+/* Botones de Categoría (Inactivos) */
+.filter-category-btn {
+  background: transparent;
+  border: 1px solid rgba(160, 122, 128, 0.2);
+  color: var(--text-secondary);
+}
+
+/* Hover en botones de categoría */
+.filter-category-btn:hover {
+  background: rgba(160, 122, 128, 0.06); /* Un toque levísimo del color */
+  border-color: #a07a80;
+  color: #a07a80;
+}
+
+/* Categoría Activa (Seleccionada) */
+.filter-category-btn.active {
+  background: #a07a80;
+  color: #ffffff;
+  border-color: #a07a80;
+  box-shadow: 0 4px 12px rgba(160, 122, 128, 0.2);
+}
+
+/* Tallas (Chips inactivos y hover) */
+.size-chip:hover {
+  border-color: #a07a80;
+  color: #a07a80;
+  background: rgba(160, 122, 128, 0.05);
+}
+
+/* Talla Activa (Seleccionada) */
+.size-chip.active {
+  background: #a07a80;
+  color: #ffffff;
+  border-color: #a07a80;
+}
+
+/* Checkboxes (Solo Renta / Solo Venta) */
+.filter-checkbox input[type="checkbox"] {
+  accent-color: #a07a80; /* Pinta la palomita del checkbox del mismo tono */
+}
+
+/* Inputs de Precio (Hover y Focus) */
+.price-range-inputs input:focus {
+  border-color: #a07a80;
+  box-shadow: 0 0 0 3px rgba(160, 122, 128, 0.15);
+}
+
+/* Títulos de cada grupo de filtro (Categoría, Color, Talla...) */
+.filter-group label {
+  color: #8a6a6f; /* Una versión ligeramente más oscura y grisácea del malva para lectura */
+}
