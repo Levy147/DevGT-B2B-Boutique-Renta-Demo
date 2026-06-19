@@ -74,18 +74,19 @@
       </div>
 
       <!-- Contenedor del Slider -->
+      <!-- Contenedor del Slider -->
       <div class="slider-wrapper">
       
-      <!-- Pista donde se renderizan las tarjetas -->
-      <div class="slider-track" id="masRentadosGrid">
-        <!-- Las tarjetas (product-card) se generarán aquí dinámicamente con JavaScript -->
-      </div>
-      
-      <!-- Flechas del Slider -->
-      <div class="slider-arrows">
-        <button class="slider-arrow" id="btnPrev" aria-label="Anterior">←</button>
-        <button class="slider-arrow" id="btnNext" aria-label="Siguiente">→</button>
-      </div>
+        <!-- IMPORTANTE: Cambiamos el ID a featuredSlider para que el JS lo encuentre -->
+        <div class="slider-track" id="featuredSlider">
+          <!-- Las tarjetas (product-card) se generarán aquí dinámicamente con JavaScript -->
+        </div>
+        
+        <!-- Flechas del Slider con sus funciones onclick -->
+        <div class="slider-arrows">
+          <button class="slider-arrow" aria-label="Anterior" onclick="slideSlider(-1)">←</button>
+          <button class="slider-arrow" aria-label="Siguiente" onclick="slideSlider(1)">→</button>
+        </div>
 
     </div>
     
