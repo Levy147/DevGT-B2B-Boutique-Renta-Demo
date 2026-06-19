@@ -1442,57 +1442,90 @@
   .cross-sell-grid { grid-template-columns: 1fr; }
 }
 /* ============================================================
-   👗 NAVBAR BLANCO Y BOTÓN DE SESIÓN (ESTILO MALVA)
+   👗 REDISEÑO PREMIUM: CRANBERRY, DUSTY MAUVE Y BLUSH VEIL
    ============================================================ */
 
-/* Fondo del menú principal a blanco con un sutil difuminado */
+/* ─── 1. NAVBAR (MENÚ SUPERIOR) ─── */
 .navbar {
-  background: rgba(255, 255, 255, 0.98) !important; 
-  border-bottom: 1px solid #eaeaea !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  background: #8e2d3b !important; /* Cranberry Silk */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(142, 45, 59, 0.3);
 }
 
-/* Color oscuro para el logo y nombre de la tienda para que resalte en el blanco */
+/* Textos e íconos en blanco para resaltar sobre el Cranberry */
 .navbar-logo,
-.navbar-logo span {
-  color: #1c1016 !important;
-}
-
-/* Enlaces del menú (Inicio, Catálogo, Cómo funciona) en gris oscuro */
-.navbar-links a {
-  color: #555555 !important;
-}
-
-/* Hover y enlace activo del menú con toque malva */
-.navbar-links a:hover,
-.navbar-links a.active {
-  color: #a07a80 !important;
-  background: rgba(160, 122, 128, 0.08) !important;
-}
-
-/* Íconos de favoritos (♡) y usuario (👤), y menú móvil (☰) */
+.navbar-logo span,
+.navbar-links a,
 .navbar-actions .btn-icon,
 .menu-toggle {
-  color: #555555 !important;
+  color: #ffffff !important;
 }
 
+/* Hover de los enlaces del menú */
+.navbar-links a:hover,
+.navbar-links a.active,
 .navbar-actions .btn-icon:hover,
 .menu-toggle:hover {
-  color: #a07a80 !important;
-  background: rgba(160, 122, 128, 0.08) !important;
+  color: #e7c7cf !important; /* Blush Veil */
+  background: rgba(231, 199, 207, 0.15) !important;
 }
 
-/* Botón de "Iniciar Sesión" con el degradado malva premium */
+/* Botón Iniciar Sesión en el menú */
 .navbar .btn-primary {
-  background: linear-gradient(135deg, #a07a80 0%, #8a6a6f 100%) !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(160, 122, 128, 0.25) !important;
+  background: #a07a80 !important; /* Dusty Mauve */
   color: #ffffff !important;
-  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 10px rgba(160, 122, 128, 0.3) !important;
 }
 
 .navbar .btn-primary:hover {
-  background: linear-gradient(135deg, #b89399 0%, #a07a80 100%) !important;
-  box-shadow: 0 6px 16px rgba(160, 122, 128, 0.4) !important;
+  background: #e7c7cf !important; /* Blush Veil */
+  color: #8e2d3b !important; /* Letras Cranberry para contraste */
   transform: translateY(-2px);
+}
+
+/* ─── 2. BARRA DE FILTROS LATERAL ─── */
+
+/* Título de los filtros */
+.filters-header h3 {
+  color: #8e2d3b; /* Cranberry Silk */
+  font-weight: 700;
+}
+
+/* Títulos pequeños (Categoría, Talla, etc) */
+.filter-group label {
+  color: #a07a80; /* Dusty Mauve */
+}
+
+/* ESTADO NORMAL: Botones y Tallas (Dusty Mauve) */
+.filter-category-btn,
+.size-chip {
+  background: #a07a80 !important;
+  color: #ffffff !important;
+  border: 1px solid #a07a80 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* ESTADO SELECCIONADO / HOVER (Blush Veil) */
+.filter-category-btn:hover,
+.filter-category-btn.active,
+.size-chip:hover,
+.size-chip.active {
+  background: #e7c7cf !important;
+  color: #8e2d3b !important; /* Texto Cranberry para legibilidad perfecta */
+  border-color: #e7c7cf !important;
+  box-shadow: 0 2px 8px rgba(231, 199, 207, 0.5);
+  font-weight: 600;
+}
+
+/* Checkboxes de Solo Renta / Solo Venta */
+.filter-checkbox input[type="checkbox"] {
+  accent-color: #8e2d3b; /* Cranberry Silk */
+}
+
+/* Inputs de Precio (Hover y Focus) */
+.price-range-inputs input:focus {
+  border-color: #a07a80;
+  box-shadow: 0 0 0 3px rgba(160, 122, 128, 0.15);
 }
