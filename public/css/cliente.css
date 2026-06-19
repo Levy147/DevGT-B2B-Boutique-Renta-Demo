@@ -902,6 +902,83 @@
   color: var(--text-muted);
   font-size: 0.7rem;
 }
+/* ============================================================
+   👗 CATÁLOGO PRINCIPAL - DISEÑO PREMIUM DARK (Alta Legibilidad)
+   ============================================================ */
+
+/* Contenedor de la tarjeta en el catálogo */
+#catalogGrid .product-card {
+  background: var(--bg-dark, #1a1a1a); /* Fondo base oscuro */
+  border: 1px solid rgba(168, 68, 92, 0.15); /* Borde súper sutil color vino */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover: se ilumina el borde y da una sombra elegante */
+#catalogGrid .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(168, 68, 92, 0.15);
+  border-color: rgba(168, 68, 92, 0.4);
+}
+
+/* Cuerpo de la tarjeta (donde va el texto) */
+#catalogGrid .product-card-body {
+  /* Degradado vertical sutil: de un gris muy oscuro con tinte vino a negro puro */
+  background: linear-gradient(180deg, rgba(38, 25, 30, 1) 0%, rgba(15, 12, 14, 1) 100%);
+  padding: 20px 18px;
+  text-align: left; /* Alineado a la izquierda para leer más rápido */
+}
+
+/* Título principal (Nombre del vestido) - Blanco puro para máximo contraste */
+#catalogGrid .product-card-body h3 {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+/* SKU - Estilo etiqueta oscura */
+#catalogGrid .product-card-body .product-sku {
+  background: rgba(255, 255, 255, 0.08);
+  color: #d4d4d4;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  font-size: 0.7rem;
+}
+
+/* Categoría y Color - Gris claro para no robar atención al precio */
+#catalogGrid .product-card-body .category {
+  color: #a0a0a0 !important;
+  font-family: var(--font-sans); /* Tipografía limpia */
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+/* Fila de precios con un separador superior sutil */
+#catalogGrid .product-card-body .price-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+  align-items: flex-end; /* Alinea los precios por la base */
+}
+
+/* Precio - Blanco, grande y con leve sombra para que salte a la vista */
+#catalogGrid .product-card-body .price {
+  color: #ffffff !important; 
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Etiqueta de "Renta por evento" / "Venta" */
+#catalogGrid .product-card-body .price-label {
+  color: #888888;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 
 /* ─── CROSS-SELLING MODULE ─── */
 .cross-sell-section {
