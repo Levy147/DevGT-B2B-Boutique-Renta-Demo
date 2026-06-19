@@ -47,11 +47,11 @@ function crearCardVestido(v) {
         <div class="category">${v.categoria} · ${v.color}</div>
         <div class="price-row">
           <div>
-            <div class="price">$${v.precio_renta.toLocaleString()}</div>
+            <div class="price">${v.precio_renta.toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</div>
             <span class="price-label">Renta por evento</span>
           </div>
           ${v.precio_venta ? `<div style="text-align:right;">
-            <div class="price" style="font-size:0.95rem;">$${v.precio_venta.toLocaleString()}</div>
+            <div class="price" style="font-size:0.95rem;">${v.precio_venta.toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</div>
             <span class="price-label">Venta</span>
           </div>` : ''}
         </div>
