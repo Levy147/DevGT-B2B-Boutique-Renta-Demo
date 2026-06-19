@@ -1448,7 +1448,7 @@
 
 /* Fondo del panel lateral: Limpio y estructurado */
 .filters-sidebar {
-  background:rgb(217, 201, 213); 
+  background: #ffffff; 
   border: 1px solid rgba(160, 122, 128, 0.25); /* Borde sutil usando el malva con transparencia */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
@@ -1476,7 +1476,7 @@
 /* Categoría Activa (Seleccionada) */
 .filter-category-btn.active {
   background: #a07a80;
-  color:rgb(203, 157, 197);
+  color: #ffffff;
   border-color: #a07a80;
   box-shadow: 0 4px 12px rgba(160, 122, 128, 0.2);
 }
@@ -1515,21 +1515,21 @@
    👗 BOTONES NAVBAR: INTEGRACIÓN CON PALETA MALVA
    ============================================================ */
 
-   .navbar .btn-primary {
-    background: linear-gradient(135deg, #a07a80 0%, #8a6a6f 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 12px rgba(160, 122, 128, 0.25);
-    color:rgb(240, 230, 236);
-  }
-  
-  .navbar .btn-primary:hover {
-    background: linear-gradient(135deg, #b89399 0%, #a07a80 100%);
-    box-shadow: 0 6px 16px rgba(160, 122, 128, 0.4);
-    transform: translateY(-2px);
-  }
-  
-  /* Toque malva al pasar el cursor sobre los íconos (corazón y usuario) */
-  .navbar-actions .btn-icon:hover {
-    color: #a07a80;
-    background: rgba(160, 122, 128, 0.08);
-  }
+.navbar .btn-primary {
+  background: linear-gradient(135deg, #a07a80 0%, #8a6a6f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(160, 122, 128, 0.25);
+  color: #ffffff;
+}
+
+.navbar .btn-primary:hover {
+  background: linear-gradient(135deg, #b89399 0%, #a07a80 100%);
+  box-shadow: 0 6px 16px rgba(160, 122, 128, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Toque malva al pasar el cursor sobre los íconos (corazón y usuario) */
+.navbar-actions .btn-icon:hover {
+  color: #a07a80;
+  background: rgba(160, 122, 128, 0.08);
+}
