@@ -509,4 +509,34 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.remove();
     }
   });
+
+  // ─── Rose Petals ───
+  const petalLayer = document.createElement('div');
+  petalLayer.className = 'petal-layer';
+  document.body.appendChild(petalLayer);
+
+  const colors = [
+    'var(--accent)', 'var(--primary)', 'var(--primary-dark)',
+    'var(--primary-hover)', 'var(--accent-soft)'
+  ];
+
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    const w = 40 + Math.random() * 30;
+    const c = colors[Math.floor(Math.random() * colors.length)];
+    const anim = 'pd' + (1 + Math.floor(Math.random() * 10));
+    const dur = 18 + Math.random() * 18;
+    const del = Math.random() * -36;
+    const lft = 2 + Math.random() * 96;
+    Object.assign(p.style, {
+      width: w + 'px',
+      height: (w * 1.3) + 'px',
+      left: lft + '%',
+      background: `radial-gradient(ellipse at 30% 30%, ${c}, transparent 70%)`,
+      animation: `${anim} ${dur}s ease-in-out infinite`,
+      animationDelay: del + 's'
+    });
+    petalLayer.appendChild(p);
+  }
 });

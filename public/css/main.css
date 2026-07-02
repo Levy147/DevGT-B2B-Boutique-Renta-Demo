@@ -937,3 +937,143 @@ img {
   color: var(--accent-soft);
   border-color: var(--accent-soft);
 }
+
+/* ─── Floating Rose Petals ─── */
+@keyframes pd1 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  10%  { transform: translate(3vw,-12vh) rotate(80deg); opacity:0.20; }
+  30%  { transform: translate(-2vw,-35vh) rotate(200deg); opacity:0.22; }
+  55%  { transform: translate(4vw,-60vh) rotate(380deg); opacity:0.18; }
+  80%  { transform: translate(-1vw,-85vh) rotate(520deg); opacity:0.12; }
+  100% { transform: translate(2vw,-120vh) rotate(640deg); opacity:0; }
+}
+@keyframes pd2 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  10%  { transform: translate(-3vw,-14vh) rotate(-70deg); opacity:0.18; }
+  35%  { transform: translate(2vw,-38vh) rotate(-210deg); opacity:0.20; }
+  60%  { transform: translate(-4vw,-62vh) rotate(-390deg); opacity:0.15; }
+  85%  { transform: translate(1vw,-88vh) rotate(-510deg); opacity:0.10; }
+  100% { transform: translate(-2vw,-120vh) rotate(-620deg); opacity:0; }
+}
+@keyframes pd3 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  12%  { transform: translate(5vw,-16vh) rotate(120deg); opacity:0.15; }
+  35%  { transform: translate(-3vw,-40vh) rotate(300deg); opacity:0.17; }
+  58%  { transform: translate(2vw,-62vh) rotate(480deg); opacity:0.13; }
+  82%  { transform: translate(-4vw,-86vh) rotate(620deg); opacity:0.09; }
+  100% { transform: translate(3vw,-120vh) rotate(740deg); opacity:0; }
+}
+@keyframes pd4 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  12%  { transform: translate(-4vw,-15vh) rotate(-110deg); opacity:0.17; }
+  38%  { transform: translate(3vw,-40vh) rotate(-290deg); opacity:0.19; }
+  62%  { transform: translate(-2vw,-65vh) rotate(-460deg); opacity:0.14; }
+  85%  { transform: translate(4vw,-90vh) rotate(-590deg); opacity:0.10; }
+  100% { transform: translate(-1vw,-120vh) rotate(-700deg); opacity:0; }
+}
+@keyframes pd5 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  15%  { transform: translate(2vw,-18vh) rotate(50deg); opacity:0.22; }
+  40%  { transform: translate(-4vw,-42vh) rotate(170deg); opacity:0.20; }
+  65%  { transform: translate(3vw,-68vh) rotate(340deg); opacity:0.16; }
+  85%  { transform: translate(-2vw,-92vh) rotate(480deg); opacity:0.11; }
+  100% { transform: translate(1vw,-120vh) rotate(560deg); opacity:0; }
+}
+@keyframes pd6 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  12%  { transform: translate(-5vw,-15vh) rotate(-90deg); opacity:0.16; }
+  36%  { transform: translate(2vw,-38vh) rotate(-250deg); opacity:0.18; }
+  60%  { transform: translate(-3vw,-62vh) rotate(-420deg); opacity:0.13; }
+  84%  { transform: translate(4vw,-88vh) rotate(-540deg); opacity:0.09; }
+  100% { transform: translate(-2vw,-120vh) rotate(-660deg); opacity:0; }
+}
+@keyframes pd7 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  14%  { transform: translate(4vw,-17vh) rotate(140deg); opacity:0.14; }
+  38%  { transform: translate(-1vw,-42vh) rotate(320deg); opacity:0.16; }
+  62%  { transform: translate(3vw,-66vh) rotate(500deg); opacity:0.12; }
+  85%  { transform: translate(-3vw,-90vh) rotate(640deg); opacity:0.08; }
+  100% { transform: translate(2vw,-120vh) rotate(760deg); opacity:0; }
+}
+@keyframes pd8 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  10%  { transform: translate(-3vw,-13vh) rotate(-60deg); opacity:0.20; }
+  34%  { transform: translate(4vw,-36vh) rotate(-180deg); opacity:0.22; }
+  58%  { transform: translate(-2vw,-60vh) rotate(-360deg); opacity:0.17; }
+  82%  { transform: translate(3vw,-84vh) rotate(-500deg); opacity:0.12; }
+  100% { transform: translate(-1vw,-120vh) rotate(-600deg); opacity:0; }
+}
+@keyframes pd9 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  15%  { transform: translate(1vw,-20vh) rotate(30deg); opacity:0.18; }
+  40%  { transform: translate(-3vw,-45vh) rotate(150deg); opacity:0.20; }
+  65%  { transform: translate(2vw,-70vh) rotate(310deg); opacity:0.15; }
+  85%  { transform: translate(-1vw,-93vh) rotate(440deg); opacity:0.10; }
+  100% { transform: translate(0vw,-120vh) rotate(520deg); opacity:0; }
+}
+@keyframes pd10 {
+  0%   { transform: translate(0vw,0vh) rotate(0deg); opacity:0; }
+  12%  { transform: translate(-2vw,-16vh) rotate(-80deg); opacity:0.15; }
+  38%  { transform: translate(1vw,-40vh) rotate(-230deg); opacity:0.17; }
+  62%  { transform: translate(-3vw,-65vh) rotate(-400deg); opacity:0.12; }
+  86%  { transform: translate(2vw,-90vh) rotate(-530deg); opacity:0.08; }
+  100% { transform: translate(-1vw,-120vh) rotate(-640deg); opacity:0; }
+}
+
+body::before, body::after,
+.main-content::before, .main-content::after,
+.petal-layer::before, .petal-layer::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 60% 40% 50% 50% / 40% 50% 50% 60%;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+body::before {
+  width: 60px; height: 76px;
+  bottom: -5%; left: 8%;
+  background: radial-gradient(ellipse at 30% 30%, var(--accent), var(--primary), transparent 70%);
+  animation: pd1 22s ease-in-out infinite; animation-delay: -2s;
+}
+body::after {
+  width: 50px; height: 62px;
+  bottom: -5%; left: 88%;
+  background: radial-gradient(ellipse at 40% 30%, var(--primary-hover), var(--primary-dark), transparent 70%);
+  animation: pd2 26s ease-in-out infinite; animation-delay: -8s;
+}
+.main-content::before {
+  width: 55px; height: 70px;
+  bottom: -5%; left: 30%;
+  background: radial-gradient(ellipse at 30% 40%, var(--accent-soft), var(--primary), transparent 70%);
+  animation: pd3 28s ease-in-out infinite; animation-delay: -14s;
+}
+.main-content::after {
+  width: 42px; height: 54px;
+  bottom: -5%; left: 68%;
+  background: radial-gradient(ellipse at 30% 30%, var(--primary), var(--accent), transparent 70%);
+  animation: pd4 24s ease-in-out infinite; animation-delay: -20s;
+}
+.petal-layer::before {
+  width: 70px; height: 86px;
+  bottom: -5%; left: 50%;
+  background: radial-gradient(ellipse at 30% 30%, var(--accent), var(--primary-dark), transparent 70%);
+  animation: pd5 30s ease-in-out infinite; animation-delay: -5s;
+}
+.petal-layer::after {
+  width: 48px; height: 60px;
+  bottom: -5%; left: 18%;
+  background: radial-gradient(ellipse at 30% 30%, var(--primary), var(--accent-soft), transparent 70%);
+  animation: pd6 34s ease-in-out infinite; animation-delay: -12s;
+}
+
+.petal {
+  position: fixed;
+  bottom: -5%;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 60% 40% 50% 50% / 40% 50% 50% 60%;
+  opacity: 0;
+  will-change: transform, opacity;
+}
